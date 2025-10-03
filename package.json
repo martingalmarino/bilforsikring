@@ -1,0 +1,30 @@
+{
+  "name": "bilforsikring-leasing",
+  "version": "1.0.0",
+  "description": "Danish car insurance and leasing comparison site",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "bilforsikring",
+    "leasing",
+    "danmark",
+    "car-insurance",
+    "comparison",
+    "denmark"
+  ],
+  "author": "Martin Galmarino",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martingalmarino/bilforsikring.git"
+  },
+  "homepage": "https://bilforsikring.vercel.app",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

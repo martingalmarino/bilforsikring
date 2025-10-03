@@ -1,0 +1,38 @@
+[
+  {
+    "udbyder": "Tryg",
+    "produkt": "Bilforsikring Basis",
+    "pris_mdr": "399 kr./md",
+    "dækning": "Ansvarsforsikring (obligatorisk)",
+    "tilvalg": ["Kasko", "Glasskade", "Vejhjælp"],
+    "kampagne": "Første måned gratis",
+    "link": "https://www.tryg.dk/forsikring/bil"
+  },
+  {
+    "udbyder": "Topdanmark",
+    "produkt": "Bilforsikring Standard",
+    "pris_mdr": "429 kr./md",
+    "dækning": "Ansvar + Kasko",
+    "tilvalg": ["Rejseforsikring", "Elbil-lader dækning"],
+    "kampagne": "10% online rabat",
+    "link": "https://www.topdanmark.dk/forsikring/bil"
+  },
+  {
+    "udbyder": "If Forsikring",
+    "produkt": "If Bilforsikring",
+    "pris_mdr": "410 kr./md",
+    "dækning": "Ansvarsforsikring med mulighed for kasko",
+    "tilvalg": ["Ung bilist dækning", "Vejhjælp"],
+    "kampagne": "Ingen selvrisiko ved første skade",
+    "link": "https://www.if.dk/forsikring/bil"
+  },
+  {
+    "udbyder": "GF Forsikring",
+    "produkt": "GF Bilforsikring",
+    "pris_mdr": "399 kr./md",
+    "dækning": "Ansvar + Kasko",
+    "tilvalg": ["Glasskade", "Vejhjælp"],
+    "kampagne": "Bonus ved skadefri kørsel",
+    "link": "https://www.gf.dk/bil"
+  }
+]

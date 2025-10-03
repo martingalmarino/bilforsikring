@@ -1,0 +1,38 @@
+[
+  {
+    "mærke": "Tesla",
+    "model": "Model 3",
+    "pris_mdr": "3.995 kr./md",
+    "udbetaling": "10.000 kr.",
+    "løbetid": "36 mdr",
+    "kampagne": "Gratis supercharging 6 mdr",
+    "link": "https://www.leaseplan.dk/tesla-model-3"
+  },
+  {
+    "mærke": "Volkswagen",
+    "model": "ID.4",
+    "pris_mdr": "3.495 kr./md",
+    "udbetaling": "15.000 kr.",
+    "løbetid": "36 mdr",
+    "kampagne": "Gratis installation af ladeboks",
+    "link": "https://www.fleggaardleasing.dk/vw-id4"
+  },
+  {
+    "mærke": "Kia",
+    "model": "EV6",
+    "pris_mdr": "3.795 kr./md",
+    "udbetaling": "10.000 kr.",
+    "løbetid": "36 mdr",
+    "kampagne": "Første 3 måneder halv pris",
+    "link": "https://www.aldautomotive.dk/kia-ev6"
+  },
+  {
+    "mærke": "Toyota",
+    "model": "Yaris Hybrid",
+    "pris_mdr": "2.495 kr./md",
+    "udbetaling": "5.000 kr.",
+    "løbetid": "24 mdr",
+    "kampagne": "Gratis service inkluderet",
+    "link": "https://www.leaseplan.dk/toyota-yaris"
+  }
+]

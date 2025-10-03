@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billigste privatleasing elbil 2025 - Find den bedste aftale</title>
+    <meta name="description" content="Find den billigste privatleasing elbil i Danmark 2025. Sammenlign priser på Tesla, VW, Kia og andre elbiler. Opdaterede tilbud og kampagner.">
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>Bilforsikring.dk</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../../">Hjem</a></li>
+                    <li><a href="../../bilforsikring/">Bilforsikring</a></li>
+                    <li><a href="../../leasing/">Leasing</a></li>
+                    <li><a href="../../guide/">Guider</a></li>
+                    <li><a href="../../faq/">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Billigste privatleasing elbil 2025 - Find den bedste aftale</h1>
+                <p>Sammenlign priser på privatleasing af elbiler i Danmark 2025. Find de bedste tilbud på Tesla, VW, Kia og andre elbiler.</p>
+            </div>
+        </section>
+
+        <section class="seo-content">
+            <div class="container">
+                <h2>Find den billigste elbil leasing i Danmark</h2>
+                <p>Elbil leasing er blevet enormt populært i Danmark, og der er mange gode tilbud at finde. I denne guide hjælper vi dig med at finde den billigste privatleasing aftale til din næste elbil.</p>
+                
+                <h3>Billigste elbiler til leasing 2025</h3>
+                <p>Nogle af de billigste elbiler til leasing inkluderer Toyota Yaris Hybrid, som kan leases fra omkring 2.500 kr. om måneden. For rent elektriske biler er Volkswagen ID.4 og Kia EV6 populære valg med leasingpriser fra 3.500-3.800 kr. om måneden.</p>
+                
+                <h3>Tesla Model 3 - Den populære valg</h3>
+                <p>Tesla Model 3 er stadig en af de mest populære elbiler til leasing, trods en højere pris på omkring 4.000 kr. om måneden. Den tilbyder dog den bedste rækkevidde og teknologi, hvilket gør den til en god investering for mange.</p>
+                
+                <h3>Sådan finder du de bedste elbil leasing tilbud</h3>
+                <p>For at finde de bedste elbil leasing tilbud, skal du sammenligne flere leasingudbydere og holde øje med kampagner. Mange tilbyder gratis installation af ladeboks eller gratis lading i de første måneder. Det kan også betale sig at overveje leasing uden udbetaling.</p>
+                
+                <h3>Skjulte omkostninger ved elbil leasing</h3>
+                <p>Når du sammenligner elbil leasing priser, skal du huske at overveje skjulte omkostninger som opladning, service og vedligeholdelse. Mange leasingaftaler inkluderer service, men opladningsomkostninger kan variere betydeligt afhængigt af din kørselsstil.</p>
+                
+                <h3>Fremtiden for elbil leasing</h3>
+                <p>Elbil leasing priser forventes at falde yderligere i 2025, da flere billige elbiler kommer på markedet. Det gør det til et godt tidspunkt at overveje at lease en elbil.</p>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <div class="container">
+                <h2>Sammenlign elbil leasing priser</h2>
+                <div class="table-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Mærke</th>
+                                <th>Model</th>
+                                <th>Pris/md</th>
+                                <th>Udbetaling</th>
+                                <th>Handling</th>
+                            </tr>
+                        </thead>
+                        <tbody id="elbil-leasing-table">
+                            <!-- Elbil leasing data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Bilforsikring.dk - Sammenlign bilforsikring og leasing i Danmark</p>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+    <script>
+        // Load elbil leasing data for this guide
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const response = await fetch('../../leasing.json');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('elbil-leasing-table');
+                tbody.innerHTML = '';
+                
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><strong>${item.mærke}</strong></td>
+                        <td>${item.model}</td>
+                        <td class="price">${item.pris_mdr}</td>
+                        <td>${item.udbetaling}</td>
+                        <td><a href="${item.link}" target="_blank" class="btn-primary">Se tilbud</a></td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error loading elbil leasing data:', error);
+            }
+        });
+    </script>
+</body>
+</html>
