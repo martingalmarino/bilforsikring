@@ -289,7 +289,7 @@ function createBilforsikringMobileCards(data) {
                 <div class="mobile-card-body">
                     <div class="mobile-card-row">
                         <span class="mobile-card-label">Pris/måned</span>
-                        <span class="mobile-card-value">${item.pris_mdr}</span>
+                        <span class="mobile-card-value price">${item.pris_mdr}</span>
                     </div>
                     <div class="mobile-card-row">
                         <span class="mobile-card-label">Dækning</span>
@@ -346,7 +346,7 @@ function createLeasingMobileCards(data) {
                 <div class="mobile-card-body">
                     <div class="mobile-card-row">
                         <span class="mobile-card-label">Pris/måned</span>
-                        <span class="mobile-card-value">${item.pris_mdr}</span>
+                        <span class="mobile-card-value price">${item.pris_mdr}</span>
                     </div>
                     <div class="mobile-card-row">
                         <span class="mobile-card-label">Udbetaling</span>
