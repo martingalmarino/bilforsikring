@@ -7,34 +7,26 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/index.html"
+      "source": "/bilforsikring",
+      "destination": "/bilforsikring/index.html"
     },
     {
-      "src": "/bilforsikring",
-      "dest": "/bilforsikring/index.html"
+      "source": "/leasing",
+      "destination": "/leasing/index.html"
     },
     {
-      "src": "/leasing",
-      "dest": "/leasing/index.html"
+      "source": "/leasing/tesla-model-3",
+      "destination": "/leasing/tesla-model-3/index.html"
     },
     {
-      "src": "/leasing/tesla-model-3",
-      "dest": "/leasing/tesla-model-3/index.html"
+      "source": "/faq",
+      "destination": "/faq/index.html"
     },
     {
-      "src": "/faq",
-      "dest": "/faq/index.html"
-    },
-    {
-      "src": "/guide/(.*)",
-      "dest": "/guide/$1/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/guide/(.*)",
+      "destination": "/guide/$1/index.html"
     }
   ],
   "headers": [
@@ -64,5 +56,7 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
