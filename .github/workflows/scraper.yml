@@ -1,0 +1,135 @@
+name: 🕷️ Automated Data Scraping
+
+on:
+  schedule:
+    # Ejecutar cada día a las 3:00 AM UTC (4:00 AM CET, 5:00 AM CEST)
+    - cron: '0 3 * * *'
+  
+  # También permitir ejecución manual
+  workflow_dispatch:
+    inputs:
+      scrape_type:
+        description: 'Tipo de scraping a ejecutar'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - bilforsikring
+        - leasing
+        - test
+
+  # Ejecutar en push para testing
+  push:
+    branches: [ main ]
+    paths: [ 'scraper/**' ]
+
+jobs:
+  scrape-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 📦 Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r scraper/requirements.txt
+        
+    - name: 🧪 Run tests
+      run: |
+        cd scraper
+        python -m pytest tests/ -v
+        
+    - name: 🕷️ Run scraper
+      run: |
+        cd scraper
+        python main_scraper.py --type ${{ github.event.inputs.scrape_type || 'all' }}
+      env:
+        SCRAPER_ENV: production
+        LOG_LEVEL: INFO
+        
+    - name: 📊 Validate scraped data
+      run: |
+        cd scraper
+        python data_validator.py --validate-all
+        
+    - name: 📈 Generate metrics
+      run: |
+        cd scraper
+        python metrics_generator.py
+        
+    - name: 💾 Commit updated data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Solo commit si hay cambios
+        if git diff --quiet; then
+          echo "No changes to commit"
+        else
+          git add bilforsikring.json leasing.json
+          git commit -m "🤖 Auto-update: Scraped data $(date '+%Y-%m-%d %H:%M')"
+          git push
+        fi
+        
+    - name: 📧 Send notification on failure
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { data: issues } = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open',
+            labels: 'scraper-error'
+          });
+          
+          if (issues.length === 0) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 Scraper failed on ${new Date().toISOString().split('T')[0]}`,
+              body: `The automated scraper failed. Please check the logs.\n\n**Workflow:** ${context.workflow}\n**Run ID:** ${context.runId}\n**Commit:** ${context.sha}`,
+              labels: ['scraper-error', 'bug']
+            });
+          }
+          
+    - name: 📊 Upload metrics
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: scraper-metrics-${{ github.run_number }}
+        path: scraper/metrics/
+        
+  notify-success:
+    needs: scrape-data
+    runs-on: ubuntu-latest
+    if: success()
+    
+    steps:
+    - name: 📧 Send success notification
+      uses: actions/github-script@v6
+      with:
+        script: |
+          // Crear un comentario en el último commit
+          const { data: commits } = await github.rest.repos.listCommits({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            per_page: 1
+          });
+          
+          if (commits.length > 0) {
+            await github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: commits[0].sha,
+              body: `✅ **Scraper ejecutado exitosamente**\n\n- **Fecha:** ${new Date().toISOString()}\n- **Tipo:** ${{ github.event.inputs.scrape_type || 'all' }}\n- **Workflow:** ${context.workflow}\n\nLos datos han sido actualizados automáticamente.`
+            });
+          }
