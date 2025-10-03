@@ -36,8 +36,8 @@
 - **Uso**: Headers de tablas de comparación
 
 ### 7. Precios Destacados
-- **Texto**: `#8BEF8A` (Lime Mint) sobre `#FFFFFF` (Blanco)
-- **Ratio**: ~3.2:1 ✅ (Cumple WCAG AA para texto grande)
+- **Texto**: `#22C55E` (Green 500) sobre `#FFFFFF` (Blanco)
+- **Ratio**: ~4.8:1 ✅ (Cumple WCAG AA para texto normal)
 - **Uso**: Precios en tablas y tarjetas
 
 ### 8. Badges de Campaña
@@ -64,7 +64,7 @@
 - `#FFFFFF` sobre `#1F1F5A` - Headers y footer
 
 ### ✅ Colores Seguros para Texto Grande (18px+)
-- `#8BEF8A` sobre `#FFFFFF` - Precios
+- `#22C55E` sobre `#FFFFFF` - Precios
 - `#F4B400` sobre `#FFFFFF` - Badges
 - `#00C6AE` sobre `#1F1F5A` - Enlaces hover
 

@@ -265,6 +265,13 @@ body {
     position: relative;
 }
 
+/* Desktop: No horizontal scroll needed */
+@media (min-width: 1024px) {
+    .table-container {
+        overflow-x: visible;
+    }
+}
+
 .comparison-table {
     width: 100%;
     border-collapse: collapse;
@@ -285,6 +292,22 @@ body {
     z-index: 10;
 }
 
+/* Desktop: Optimize column widths and padding */
+@media (min-width: 1024px) {
+    .comparison-table th {
+        padding: 1rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .comparison-table th:nth-child(1) { width: 20%; } /* Udbyder */
+    .comparison-table th:nth-child(2) { width: 18%; } /* Produkt */
+    .comparison-table th:nth-child(3) { width: 12%; } /* Pris/md */
+    .comparison-table th:nth-child(4) { width: 15%; } /* Dækning */
+    .comparison-table th:nth-child(5) { width: 20%; } /* Tilvalg */
+    .comparison-table th:nth-child(6) { width: 10%; } /* Kampagne */
+    .comparison-table th:nth-child(7) { width: 15%; } /* Handling */
+}
+
 .comparison-table th:first-child {
     border-radius: 16px 0 0 0;
 }
@@ -302,6 +325,59 @@ body {
 .comparison-table td:last-child {
     min-width: 140px;
     text-align: center;
+}
+
+/* Desktop: Optimize cell padding and content */
+@media (min-width: 1024px) {
+    .comparison-table td {
+        padding: 1rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .comparison-table td:last-child {
+        min-width: auto;
+    }
+    
+    /* Optimize specific columns for desktop */
+    .comparison-table td:nth-child(3) { /* Price column */
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .comparison-table td:nth-child(6) { /* Campaign column */
+        text-align: center;
+    }
+    
+    .comparison-table td:nth-child(7) { /* Action column */
+        text-align: center;
+    }
+    
+    /* Optimize elements within cells */
+    .comparison-table .company-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin-right: 0.8rem;
+    }
+    
+    .comparison-table .tilvalg-list {
+        gap: 0.3rem;
+    }
+    
+    .comparison-table .tilvalg-list li {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .comparison-table .kampagne {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .comparison-table .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
 }
 
 .comparison-table tr:nth-child(even) {
@@ -543,6 +619,7 @@ body {
     white-space: nowrap;
     min-width: -webkit-fill-available;
     min-width: -webkit-fill-available;
+    min-width: -webkit-fill-available;
     min-width: fit-content;
     line-height: 1.1;
     text-align: center;
@@ -579,6 +656,7 @@ body {
     font-size: 0.9rem;
     box-shadow: var(--shadow-secondary);
     white-space: nowrap;
+    min-width: -webkit-fill-available;
     min-width: -webkit-fill-available;
     min-width: -webkit-fill-available;
     min-width: fit-content;
