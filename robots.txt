@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bilforsikring.vercel.app/sitemap.xml
+
+# Important pages
+Allow: /bilforsikring/
+Allow: /leasing/
+Allow: /guide/
+Allow: /faq/
+
+# Disallow admin or private areas (if any in the future)
+Disallow: /admin/
+Disallow: /private/
