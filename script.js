@@ -60,6 +60,9 @@ async function loadBilforsikringData() {
             `;
             tbody.appendChild(row);
         });
+        
+        // Create mobile cards
+        createBilforsikringMobileCards(data);
     } catch (error) {
         console.error('Error loading bilforsikring data:', error);
     }
@@ -104,6 +107,9 @@ async function loadLeasingData() {
             `;
             tbody.appendChild(row);
         });
+        
+        // Create mobile cards
+        createLeasingMobileCards(data);
     } catch (error) {
         console.error('Error loading leasing data:', error);
     }
@@ -219,4 +225,169 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
     
     initializeSmoothScrolling();
+    initializeMobileMenu();
+    initializeMobileCards();
 });
+
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const hamburger = document.getElementById('nav-hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+}
+
+// Mobile cards functionality
+function initializeMobileCards() {
+    // This function will be called after data is loaded
+    // It will create mobile cards based on the loaded data
+}
+
+// Function to create mobile cards for bilforsikring
+function createBilforsikringMobileCards(data) {
+    const container = document.querySelector('.comparison-section .container');
+    if (!container) return;
+    
+    let mobileCardsHTML = '<div class="mobile-cards">';
+    
+    data.forEach(item => {
+        const tilvalgHTML = item.tilvalg.map(tilvalg => 
+            `<span class="tilvalg-item">${getTilvalgIcon(tilvalg)} ${tilvalg}</span>`
+        ).join('');
+        
+        mobileCardsHTML += `
+            <div class="mobile-card">
+                <div class="mobile-card-header">
+                    <div class="company-logo">${item.udbyder.charAt(0)}</div>
+                    <div>
+                        <h3>${item.udbyder}</h3>
+                        <p>${item.produkt}</p>
+                    </div>
+                </div>
+                <div class="mobile-card-body">
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Pris/måned</span>
+                        <span class="mobile-card-value">${item.pris_mdr}</span>
+                    </div>
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Dækning</span>
+                        <span class="mobile-card-value">${item.dækning}</span>
+                    </div>
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Tilvalg</span>
+                        <span class="mobile-card-value">${tilvalgHTML}</span>
+                    </div>
+                    ${item.kampagne ? `
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Kampagne</span>
+                        <span class="mobile-card-value">
+                            <span class="kampagne ${getKampagneType(item.kampagne)}">${item.kampagne}</span>
+                        </span>
+                    </div>
+                    ` : ''}
+                    <div class="mobile-card-cta">
+                        <a href="${item.link}" class="btn-primary" target="_blank" rel="noopener">
+                            Se tilbud <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    mobileCardsHTML += '</div>';
+    
+    // Insert mobile cards after trust bar
+    const trustBar = container.querySelector('.trust-bar');
+    if (trustBar) {
+        trustBar.insertAdjacentHTML('afterend', mobileCardsHTML);
+    }
+}
+
+// Function to create mobile cards for leasing
+function createLeasingMobileCards(data) {
+    const container = document.querySelector('.comparison-section .container');
+    if (!container) return;
+    
+    let mobileCardsHTML = '<div class="mobile-cards">';
+    
+    data.forEach(item => {
+        mobileCardsHTML += `
+            <div class="mobile-card">
+                <div class="mobile-card-header">
+                    <div class="company-logo">${getCarBrandLogo(item.mærke)}</div>
+                    <div>
+                        <h3>${item.mærke} ${item.model}</h3>
+                        <p>Privatleasing</p>
+                    </div>
+                </div>
+                <div class="mobile-card-body">
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Pris/måned</span>
+                        <span class="mobile-card-value">${item.pris_mdr}</span>
+                    </div>
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Udbetaling</span>
+                        <span class="mobile-card-value">${item.udbetaling}</span>
+                    </div>
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Løbetid</span>
+                        <span class="mobile-card-value">${item.løbetid}</span>
+                    </div>
+                    ${item.kampagne ? `
+                    <div class="mobile-card-row">
+                        <span class="mobile-card-label">Kampagne</span>
+                        <span class="mobile-card-value">
+                            <span class="kampagne ${getKampagneType(item.kampagne)}">${item.kampagne}</span>
+                        </span>
+                    </div>
+                    ` : ''}
+                    <div class="mobile-card-cta">
+                        <a href="${item.link}" class="btn-primary" target="_blank" rel="noopener">
+                            Se tilbud <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    mobileCardsHTML += '</div>';
+    
+    // Insert mobile cards after trust bar
+    const trustBar = container.querySelector('.trust-bar');
+    if (trustBar) {
+        trustBar.insertAdjacentHTML('afterend', mobileCardsHTML);
+    }
+}
+
+// Helper function to get campaign type
+function getKampagneType(kampagne) {
+    const kampagneLower = kampagne.toLowerCase();
+    if (kampagneLower.includes('gratis') || kampagneLower.includes('gratis')) return 'positive';
+    if (kampagneLower.includes('rabat') || kampagneLower.includes('rabat')) return 'standard';
+    if (kampagneLower.includes('halv') || kampagneLower.includes('halv')) return 'limited';
+    return 'standard';
+}

@@ -70,6 +70,36 @@ body {
     background: #E3F2FD;
 }
 
+/* Hamburger Menu */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.nav-hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #1A237E;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.nav-hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Hero section */
 .hero {
     background: linear-gradient(135deg, #1A237E 0%, #3949AB 50%, #42A5F5 100%);
@@ -290,6 +320,73 @@ body {
 
 .comparison-table tr:last-child td:last-child {
     border-radius: 0 0 16px 0;
+}
+
+/* Mobile Cards - Hidden by default */
+.mobile-cards {
+    display: none;
+}
+
+.mobile-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.mobile-card-header {
+    background: linear-gradient(135deg, #1A237E, #3949AB);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-card-body {
+    padding: 1.5rem;
+}
+
+.mobile-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #F0F4F8;
+}
+
+.mobile-card-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.mobile-card-label {
+    font-weight: 600;
+    color: #37474F;
+    font-size: 0.9rem;
+}
+
+.mobile-card-value {
+    color: #1A237E;
+    font-weight: 500;
+    text-align: right;
+}
+
+.mobile-card-cta {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.mobile-card-cta .btn-primary {
+    width: 100%;
+    justify-content: center;
 }
 
 /* Logo styling */
@@ -609,16 +706,51 @@ body {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    /* Hamburger Menu */
+    .nav-hamburger {
+        display: flex;
+    }
+    
     .nav-container {
-        flex-direction: column;
-        gap: 1rem;
         padding: 1rem 20px;
     }
     
     .nav-menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 5rem;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+    
+    /* Mobile Cards */
+    .table-container {
+        display: none;
+    }
+    
+    .mobile-cards {
+        display: block;
     }
     
     .hero {
