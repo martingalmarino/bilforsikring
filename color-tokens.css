@@ -1,0 +1,199 @@
+/* ========================================
+   BILFORSIKRING.DK - NUEVO SISTEMA DE COLORES
+   ======================================== */
+
+:root {
+  /* ===== COLORES PRIMARIOS ===== */
+  --color-primary: #3A2DFF;           /* Deep Indigo - Botones principales, enlaces header */
+  --color-primary-dark: #1F1F5A;      /* Navy Deep - Hover, headers tabla, footer */
+  
+  /* ===== COLORES SECUNDARIOS ===== */
+  --color-secondary: #00C6AE;         /* Bright Teal - CTA secundario, iconos destacados */
+  
+  /* ===== COLORES DE ESTADO ===== */
+  --color-success: #8BEF8A;           /* Lime Mint - Precios, promociones, mensajes éxito */
+  --color-warning: #F4B400;           /* Amber Soft - Avisos precios, disclaimers */
+  --color-error: #FF4D5A;             /* Coral Red - Errores, características no disponibles */
+  
+  /* ===== COLORES DE TEXTO ===== */
+  --color-text-primary: #2B2E3A;      /* Slate Dark - Texto principal, alta legibilidad */
+  --color-text-secondary: #5A5E6D;    /* Slate Medium - Texto secundario, etiquetas helper */
+  
+  /* ===== COLORES DE FONDO ===== */
+  --color-bg: #F8F9FB;                /* Porcelain - Fondo global, más suave que blanco puro */
+  --color-surface: #FFFFFF;           /* White - Fondos de tarjetas, áreas de contenido principal */
+  --color-section-bg: #F1F2FF;        /* Indigo Mist - Fondos de sección, hero sutil */
+  
+  /* ===== COLORES DE BORDES ===== */
+  --color-border: #E5E7EB;            /* Light Gray - Separadores limpios y sutiles */
+  
+  /* ===== GRADIENTES ===== */
+  --gradient-hero: linear-gradient(135deg, #1F1F5A 0%, #3A2DFF 100%);
+  --gradient-primary: linear-gradient(135deg, #3A2DFF 0%, #1F1F5A 100%);
+  --gradient-secondary: linear-gradient(135deg, #00C6AE 0%, #008B7A 100%);
+  
+  /* ===== SOMBRAS ===== */
+  --shadow-primary: 0 4px 15px rgba(58, 45, 255, 0.3);
+  --shadow-secondary: 0 4px 15px rgba(0, 198, 174, 0.3);
+  --shadow-success: 0 4px 15px rgba(139, 239, 138, 0.3);
+  --shadow-warning: 0 4px 15px rgba(244, 180, 0, 0.3);
+  --shadow-error: 0 4px 15px rgba(255, 77, 90, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+  
+  /* ===== ESTADOS HOVER ===== */
+  --color-primary-hover: #2A1FCC;     /* Versión más oscura del primario */
+  --color-secondary-hover: #00A896;   /* Versión más oscura del secundario */
+  --color-success-hover: #7AE078;     /* Versión más oscura del éxito */
+  --color-warning-hover: #E6A200;     /* Versión más oscura del warning */
+  --color-error-hover: #E6444A;       /* Versión más oscura del error */
+  
+  /* ===== ESTADOS FOCUS ===== */
+  --color-focus: #3A2DFF;             /* Color para estados de foco */
+  --color-focus-ring: rgba(58, 45, 255, 0.3); /* Anillo de foco */
+  
+  /* ===== ESTADOS DISABLED ===== */
+  --color-disabled: #9CA3AF;          /* Gris para elementos deshabilitados */
+  --color-disabled-bg: #F3F4F6;       /* Fondo para elementos deshabilitados */
+  
+  /* ===== COLORES DE TABLA ===== */
+  --color-table-header: #1F1F5A;      /* Fondo header tabla */
+  --color-table-header-text: #FFFFFF; /* Texto header tabla */
+  --color-table-row-even: #F8F9FB;    /* Filas pares */
+  --color-table-row-odd: #FFFFFF;     /* Filas impares */
+  --color-table-row-hover: #F1F2FF;   /* Hover filas tabla */
+  --color-table-border: #E5E7EB;      /* Bordes tabla */
+  
+  /* ===== COLORES DE FAQ ===== */
+  --color-faq-header: #1F1F5A;        /* Fondo header FAQ */
+  --color-faq-header-hover: #3A2DFF;  /* Hover header FAQ */
+  --color-faq-icon: #00C6AE;          /* Iconos FAQ */
+  --color-faq-toggle: #00C6AE;        /* Toggle FAQ */
+  
+  /* ===== COLORES DE FOOTER ===== */
+  --color-footer-bg: #1F1F5A;         /* Fondo footer */
+  --color-footer-text: #FFFFFF;       /* Texto footer */
+  --color-footer-link: #FFFFFF;       /* Enlaces footer */
+  --color-footer-link-hover: #00C6AE; /* Hover enlaces footer */
+  
+  /* ===== COLORES DE BADGES ===== */
+  --color-badge-success: #8BEF8A;     /* Badge éxito */
+  --color-badge-warning: #F4B400;     /* Badge warning */
+  --color-badge-info: #3A2DFF;        /* Badge info */
+  --color-badge-error: #FF4D5A;       /* Badge error */
+  
+  /* ===== COLORES DE PRECIOS ===== */
+  --color-price: #8BEF8A;             /* Color para precios destacados */
+  --color-price-bg: rgba(139, 239, 138, 0.1); /* Fondo precio */
+  
+  /* ===== COLORES DE CAMPAÑAS ===== */
+  --color-campaign-positive: #8BEF8A; /* Campaña positiva */
+  --color-campaign-standard: #3A2DFF; /* Campaña estándar */
+  --color-campaign-limited: #F4B400;  /* Campaña limitada */
+  
+  /* ===== COLORES DE TRUST ELEMENTS ===== */
+  --color-trust-bg: #F1F2FF;          /* Fondo trust bar */
+  --color-trust-text: #1F1F5A;        /* Texto trust bar */
+  --color-trust-icon: #1F1F5A;        /* Iconos trust bar */
+  
+  /* ===== COLORES DE DISCLAIMER ===== */
+  --color-disclaimer-bg: rgba(244, 180, 0, 0.1); /* Fondo disclaimer */
+  --color-disclaimer-border: #F4B400; /* Borde disclaimer */
+  --color-disclaimer-text: #B45309;   /* Texto disclaimer */
+}
+
+/* ===== UTILIDADES DE COLOR ===== */
+.text-primary { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-secondary) !important; }
+.text-success { color: var(--color-success) !important; }
+.text-warning { color: var(--color-warning) !important; }
+.text-error { color: var(--color-error) !important; }
+.text-muted { color: var(--color-text-secondary) !important; }
+
+.bg-primary { background-color: var(--color-primary) !important; }
+.bg-secondary { background-color: var(--color-secondary) !important; }
+.bg-success { background-color: var(--color-success) !important; }
+.bg-warning { background-color: var(--color-warning) !important; }
+.bg-error { background-color: var(--color-error) !important; }
+.bg-surface { background-color: var(--color-surface) !important; }
+.bg-section { background-color: var(--color-section-bg) !important; }
+
+.border-primary { border-color: var(--color-primary) !important; }
+.border-secondary { border-color: var(--color-secondary) !important; }
+.border-success { border-color: var(--color-success) !important; }
+.border-warning { border-color: var(--color-warning) !important; }
+.border-error { border-color: var(--color-error) !important; }
+.border-default { border-color: var(--color-border) !important; }
+
+/* ===== CLASES DE BOTONES ===== */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-surface);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-secondary);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
+}
+
+/* ===== CLASES DE BADGES ===== */
+.badge-success {
+  background-color: var(--color-badge-success);
+  color: var(--color-text-primary);
+}
+
+.badge-warning {
+  background-color: var(--color-badge-warning);
+  color: var(--color-text-primary);
+}
+
+.badge-info {
+  background-color: var(--color-badge-info);
+  color: var(--color-surface);
+}
+
+.badge-error {
+  background-color: var(--color-badge-error);
+  color: var(--color-surface);
+}
+
+/* ===== CLASES DE PRECIOS ===== */
+.price-highlight {
+  color: var(--color-price);
+  font-weight: 700;
+  background-color: var(--color-price-bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+/* ===== CLASES DE CAMPAÑAS ===== */
+.campaign-positive {
+  background-color: rgba(139, 239, 138, 0.2);
+  color: var(--color-success);
+}
+
+.campaign-standard {
+  background-color: rgba(58, 45, 255, 0.2);
+  color: var(--color-primary);
+}
+
+.campaign-limited {
+  background-color: rgba(244, 180, 0, 0.2);
+  color: var(--color-warning);
+}
