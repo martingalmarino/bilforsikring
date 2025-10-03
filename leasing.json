@@ -1,38 +1,211 @@
-[
-  {
-    "mærke": "Tesla",
-    "model": "Model 3",
-    "pris_mdr": "3.995 kr./md",
-    "udbetaling": "10.000 kr.",
-    "løbetid": "36 mdr",
-    "kampagne": "Gratis supercharging 6 mdr",
-    "link": "https://www.leaseplan.dk/tesla-model-3"
-  },
-  {
-    "mærke": "Volkswagen",
-    "model": "ID.4",
-    "pris_mdr": "3.495 kr./md",
-    "udbetaling": "15.000 kr.",
-    "løbetid": "36 mdr",
-    "kampagne": "Gratis installation af ladeboks",
-    "link": "https://www.fleggaardleasing.dk/vw-id4"
-  },
-  {
-    "mærke": "Kia",
-    "model": "EV6",
-    "pris_mdr": "3.795 kr./md",
-    "udbetaling": "10.000 kr.",
-    "løbetid": "36 mdr",
-    "kampagne": "Første 3 måneder halv pris",
-    "link": "https://www.aldautomotive.dk/kia-ev6"
-  },
-  {
-    "mærke": "Toyota",
-    "model": "Yaris Hybrid",
-    "pris_mdr": "2.495 kr./md",
-    "udbetaling": "5.000 kr.",
-    "løbetid": "24 mdr",
-    "kampagne": "Gratis service inkluderet",
-    "link": "https://www.leaseplan.dk/toyota-yaris"
+{
+  "data": [
+    {
+      "mærke": "Tesla",
+      "model": "Model 3",
+      "variant": "Standard Range",
+      "pris_mdr": "3.995 kr./md",
+      "udbetaling": "10.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis supercharging 6 mdr",
+      "link": "https://www.leaseplan.dk/tesla-model-3",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "leaseplan.dk",
+      "reliability_score": 0.95,
+      "additional_info": {
+        "delivery_time": "2-4 uger",
+        "service_included": false,
+        "insurance_included": false,
+        "charging": "Supercharging inkluderet"
+      }
+    },
+    {
+      "mærke": "Tesla",
+      "model": "Model 3",
+      "variant": "Long Range",
+      "pris_mdr": "4.295 kr./md",
+      "udbetaling": "15.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "20.000 km",
+      "kampagne": "Gratis supercharging 6 mdr",
+      "link": "https://www.tesla.com/da_dk/model3/design",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "tesla.com",
+      "reliability_score": 0.98,
+      "additional_info": {
+        "delivery_time": "2-4 uger",
+        "service_included": false,
+        "insurance_included": false,
+        "charging": "Supercharging inkluderet"
+      }
+    },
+    {
+      "mærke": "Volkswagen",
+      "model": "ID.4",
+      "variant": "Pro",
+      "pris_mdr": "3.495 kr./md",
+      "udbetaling": "15.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis installation af ladeboks",
+      "link": "https://www.volkswagen.dk/da/models/id-family.html",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "volkswagen.dk",
+      "reliability_score": 0.92,
+      "additional_info": {
+        "delivery_time": "4-6 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks installation inkluderet"
+      }
+    },
+    {
+      "mærke": "Kia",
+      "model": "EV6",
+      "variant": "GT-Line",
+      "pris_mdr": "3.795 kr./md",
+      "udbetaling": "10.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Første 3 måneder halv pris",
+      "link": "https://www.aldautomotive.dk/kia-ev6",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "aldautomotive.dk",
+      "reliability_score": 0.90,
+      "additional_info": {
+        "delivery_time": "6-8 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks installation mulig"
+      }
+    },
+    {
+      "mærke": "Toyota",
+      "model": "Yaris Hybrid",
+      "variant": "Comfort",
+      "pris_mdr": "2.495 kr./md",
+      "udbetaling": "5.000 kr.",
+      "løbetid": "24 mdr",
+      "km_år": "12.000 km",
+      "kampagne": "Gratis service inkluderet",
+      "link": "https://www.leaseplan.dk/toyota-yaris",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "leaseplan.dk",
+      "reliability_score": 0.93,
+      "additional_info": {
+        "delivery_time": "2-3 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "fuel_type": "Hybrid"
+      }
+    },
+    {
+      "mærke": "BMW",
+      "model": "iX3",
+      "variant": "M Sport",
+      "pris_mdr": "4.995 kr./md",
+      "udbetaling": "20.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis ladeboks + installation",
+      "link": "https://www.aldautomotive.dk/bmw-ix3",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "aldautomotive.dk",
+      "reliability_score": 0.88,
+      "additional_info": {
+        "delivery_time": "8-10 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks + installation inkluderet"
+      }
+    },
+    {
+      "mærke": "Audi",
+      "model": "Q4 e-tron",
+      "variant": "40",
+      "pris_mdr": "4.295 kr./md",
+      "udbetaling": "18.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis ladeboks installation",
+      "link": "https://www.leaseplan.dk/audi-q4-etron",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "leaseplan.dk",
+      "reliability_score": 0.91,
+      "additional_info": {
+        "delivery_time": "6-8 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks installation inkluderet"
+      }
+    },
+    {
+      "mærke": "Mercedes-Benz",
+      "model": "EQA",
+      "variant": "250",
+      "pris_mdr": "4.495 kr./md",
+      "udbetaling": "15.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis servicepakke",
+      "link": "https://www.aldautomotive.dk/mercedes-eqa",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "aldautomotive.dk",
+      "reliability_score": 0.89,
+      "additional_info": {
+        "delivery_time": "8-10 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks installation mulig"
+      }
+    },
+    {
+      "mærke": "Nissan",
+      "model": "Ariya",
+      "variant": "Advance",
+      "pris_mdr": "3.995 kr./md",
+      "udbetaling": "12.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis ladeboks + 6 mdr lading",
+      "link": "https://www.leaseplan.dk/nissan-ariya",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "leaseplan.dk",
+      "reliability_score": 0.87,
+      "additional_info": {
+        "delivery_time": "4-6 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks + 6 mdr lading inkluderet"
+      }
+    },
+    {
+      "mærke": "Hyundai",
+      "model": "IONIQ 5",
+      "variant": "Premium",
+      "pris_mdr": "3.695 kr./md",
+      "udbetaling": "10.000 kr.",
+      "løbetid": "36 mdr",
+      "km_år": "15.000 km",
+      "kampagne": "Gratis ladeboks installation",
+      "link": "https://www.aldautomotive.dk/hyundai-ioniq5",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "aldautomotive.dk",
+      "reliability_score": 0.90,
+      "additional_info": {
+        "delivery_time": "6-8 uger",
+        "service_included": true,
+        "insurance_included": false,
+        "charging": "Ladeboks installation inkluderet"
+      }
+    }
+  ],
+  "metadata": {
+    "last_updated": "2025-01-27T16:11:00Z",
+    "total_records": 10,
+    "scraper_version": "1.0.0",
+    "data_sources": ["leaseplan.dk", "tesla.com", "volkswagen.dk", "aldautomotive.dk"],
+    "reliability_average": 0.91
   }
-]
+}
