@@ -31,7 +31,10 @@ function getTilvalgIcon(tilvalg) {
 async function loadBilforsikringData() {
     try {
         const response = await fetch('bilforsikring.json');
-        const data = await response.json();
+        const jsonData = await response.json();
+        
+        // Handle both old format (array) and new format (object with data property)
+        const data = jsonData.data || jsonData;
         
         const tbody = document.getElementById('bilforsikring-table');
         tbody.innerHTML = '';
@@ -82,7 +85,10 @@ function getCarBrandLogo(brand) {
 async function loadLeasingData() {
     try {
         const response = await fetch('leasing.json');
-        const data = await response.json();
+        const jsonData = await response.json();
+        
+        // Handle both old format (array) and new format (object with data property)
+        const data = jsonData.data || jsonData;
         
         const tbody = document.getElementById('leasing-table');
         tbody.innerHTML = '';
