@@ -1,0 +1,158 @@
+{
+  "data": [
+    {
+      "udbyder": "Tryg",
+      "produkt": "Bilforsikring Basis",
+      "pris_mdr": "399 kr./md",
+      "pris_år": "4.788 kr./år",
+      "dækning": "Ansvarsforsikring (obligatorisk)",
+      "tilvalg": ["Kasko", "Glasskade", "Vejhjælp"],
+      "kampagne": "Første måned gratis",
+      "link": "https://www.tryg.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "tryg.dk",
+      "reliability_score": 0.95,
+      "additional_info": {
+        "selvrisiko": "2.500 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig"
+      }
+    },
+    {
+      "udbyder": "Topdanmark",
+      "produkt": "Bilforsikring Standard",
+      "pris_mdr": "429 kr./md",
+      "pris_år": "5.148 kr./år",
+      "dækning": "Ansvar + Kasko",
+      "tilvalg": ["Rejseforsikring", "Elbil-lader dækning"],
+      "kampagne": "10% online rabat",
+      "link": "https://www.topdanmark.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "topdanmark.dk",
+      "reliability_score": 0.92,
+      "additional_info": {
+        "selvrisiko": "2.000 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig"
+      }
+    },
+    {
+      "udbyder": "If Forsikring",
+      "produkt": "If Bilforsikring",
+      "pris_mdr": "410 kr./md",
+      "pris_år": "4.920 kr./år",
+      "dækning": "Ansvarsforsikring med mulighed for kasko",
+      "tilvalg": ["Ung bilist dækning", "Vejhjælp"],
+      "kampagne": "Ingen selvrisiko ved første skade",
+      "link": "https://www.if.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "if.dk",
+      "reliability_score": 0.90,
+      "additional_info": {
+        "selvrisiko": "2.500 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig"
+      }
+    },
+    {
+      "udbyder": "GF Forsikring",
+      "produkt": "GF Bilforsikring",
+      "pris_mdr": "399 kr./md",
+      "pris_år": "4.788 kr./år",
+      "dækning": "Ansvar + Kasko",
+      "tilvalg": ["Glasskade", "Vejhjælp"],
+      "kampagne": "Bonus ved skadefri kørsel",
+      "link": "https://www.gf.dk/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "gf.dk",
+      "reliability_score": 0.88,
+      "additional_info": {
+        "selvrisiko": "2.000 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig"
+      }
+    },
+    {
+      "udbyder": "Alm. Brand",
+      "produkt": "Alm. Brand Bilforsikring",
+      "pris_mdr": "415 kr./md",
+      "pris_år": "4.980 kr./år",
+      "dækning": "Ansvar + Kasko",
+      "tilvalg": ["Glasskade", "Vejhjælp", "Rejseforsikring"],
+      "kampagne": "5% rabat for nye kunder",
+      "link": "https://www.almbrand.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "almbrand.dk",
+      "reliability_score": 0.87,
+      "additional_info": {
+        "selvrisiko": "2.500 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig"
+      }
+    },
+    {
+      "udbyder": "Codan",
+      "produkt": "Codan Bilforsikring",
+      "pris_mdr": "425 kr./md",
+      "pris_år": "5.100 kr./år",
+      "dækning": "Ansvar + Kasko",
+      "tilvalg": ["Glasskade", "Vejhjælp", "Elbil-lader dækning"],
+      "kampagne": "Gratis vejhjælp første år",
+      "link": "https://www.codan.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "codan.dk",
+      "reliability_score": 0.85,
+      "additional_info": {
+        "selvrisiko": "2.000 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig"
+      }
+    },
+    {
+      "udbyder": "Lærerstandens Brandforsikring",
+      "produkt": "Lærerstandens Bilforsikring",
+      "pris_mdr": "385 kr./md",
+      "pris_år": "4.620 kr./år",
+      "dækning": "Ansvar + Kasko",
+      "tilvalg": ["Glasskade", "Vejhjælp", "Rejseforsikring"],
+      "kampagne": "Medlemsrabat 15%",
+      "link": "https://www.laererstandens.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "laererstandens.dk",
+      "reliability_score": 0.93,
+      "additional_info": {
+        "selvrisiko": "2.000 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig",
+        "medlemskab": "Påkrævet"
+      }
+    },
+    {
+      "udbyder": "FDM Forsikring",
+      "produkt": "FDM Bilforsikring",
+      "pris_mdr": "395 kr./md",
+      "pris_år": "4.740 kr./år",
+      "dækning": "Ansvar + Kasko",
+      "tilvalg": ["Glasskade", "Vejhjælp", "Rejseforsikring"],
+      "kampagne": "FDM medlemsrabat 10%",
+      "link": "https://www.fdm.dk/forsikring/bil",
+      "last_updated": "2025-01-27T16:11:00Z",
+      "data_source": "fdm.dk",
+      "reliability_score": 0.91,
+      "additional_info": {
+        "selvrisiko": "2.000 kr.",
+        "bonus_malus": "Mulig",
+        "ung_bilist": "Rabat tilgængelig",
+        "medlemskab": "Påkrævet"
+      }
+    }
+  ],
+  "metadata": {
+    "last_updated": "2025-01-27T16:11:00Z",
+    "total_records": 8,
+    "scraper_version": "1.0.0",
+    "data_sources": ["tryg.dk", "topdanmark.dk", "if.dk", "gf.dk", "almbrand.dk", "codan.dk", "laererstandens.dk", "fdm.dk"],
+    "reliability_average": 0.90
+  }
+}
+

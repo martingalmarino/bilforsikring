@@ -1,0 +1,11 @@
+{
+  "data": [
+    {
+      "timestamp": "2025-10-03T16:11:46.496666",
+      "scrape_type": "all",
+      "results": {
+        "bilforsikring": [],
+        "leasing": [],
+        "errors": [],
+        "stats": {
+          "start_time": 
