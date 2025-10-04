@@ -446,6 +446,7 @@ function createBilforsikringCards(data) {
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="card-minimum-price">Mindstepris ${item.pris_mdr}</div>
                     <div class="card-details">
                         <div class="card-detail-row">
                             <span class="card-detail-label">Pris måned</span>
@@ -462,9 +463,6 @@ function createBilforsikringCards(data) {
                     <div class="card-cta">
                         <a href="${item.link}" target="_blank" class="btn-primary">Se Tilbud</a>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <p>Mindstepris ${item.pris_mdr}</p>
                 </div>
             </div>
         `;
@@ -516,6 +514,7 @@ function createLeasingCards(data) {
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="card-minimum-price">Mindstepris ${item.pris_mdr}</div>
                     <div class="card-details">
                         <div class="card-detail-row">
                             <span class="card-detail-label">Pris måned</span>
@@ -543,9 +542,6 @@ function createLeasingCards(data) {
                     <div class="card-cta">
                         <a href="${item.link}" target="_blank" class="btn-primary">Se Tilbud</a>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <p>Mindstepris ${item.pris_mdr}</p>
                 </div>
             </div>
         `;
