@@ -4,8 +4,8 @@
 
 :root {
   /* ===== COLORES PRIMARIOS ===== */
-  --color-primary: #3A2DFF;           /* Deep Indigo - Botones principales, enlaces header */
-  --color-primary-dark: #1F1F5A;      /* Navy Deep - Hover, headers tabla, footer */
+  --color-primary: #1e73be;           /* Blue Primary - Botones principales, enlaces header */
+  --color-primary-dark: #155a9e;      /* Blue Dark - Hover, headers tabla, footer */
   
   /* ===== COLORES SECUNDARIOS ===== */
   --color-secondary: #00C6AE;         /* Bright Teal - CTA secundario, iconos destacados */
@@ -28,12 +28,12 @@
   --color-border: #E5E7EB;            /* Light Gray - Separadores limpios y sutiles */
   
   /* ===== GRADIENTES ===== */
-  --gradient-hero: linear-gradient(135deg, #1F1F5A 0%, #3A2DFF 100%);
-  --gradient-primary: linear-gradient(135deg, #3A2DFF 0%, #1F1F5A 100%);
+  --gradient-hero: linear-gradient(135deg, #155a9e 0%, #1e73be 100%);
+  --gradient-primary: linear-gradient(135deg, #1e73be 0%, #155a9e 100%);
   --gradient-secondary: linear-gradient(135deg, #00C6AE 0%, #008B7A 100%);
   
   /* ===== SOMBRAS ===== */
-  --shadow-primary: 0 4px 15px rgba(58, 45, 255, 0.3);
+  --shadow-primary: 0 4px 15px rgba(30, 115, 190, 0.3);
   --shadow-secondary: 0 4px 15px rgba(0, 198, 174, 0.3);
   --shadow-success: 0 4px 15px rgba(34, 197, 94, 0.3);
   --shadow-warning: 0 4px 15px rgba(244, 180, 0, 0.3);
@@ -42,22 +42,22 @@
   --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
   
   /* ===== ESTADOS HOVER ===== */
-  --color-primary-hover: #2A1FCC;     /* Versión más oscura del primario */
+  --color-primary-hover: #155a9e;     /* Versión más oscura del primario */
   --color-secondary-hover: #00A896;   /* Versión más oscura del secundario */
   --color-success-hover: #16A34A;     /* Versión más oscura del éxito */
   --color-warning-hover: #E6A200;     /* Versión más oscura del warning */
   --color-error-hover: #E6444A;       /* Versión más oscura del error */
   
   /* ===== ESTADOS FOCUS ===== */
-  --color-focus: #3A2DFF;             /* Color para estados de foco */
-  --color-focus-ring: rgba(58, 45, 255, 0.3); /* Anillo de foco */
+  --color-focus: #1e73be;             /* Color para estados de foco */
+  --color-focus-ring: rgba(30, 115, 190, 0.3); /* Anillo de foco */
   
   /* ===== ESTADOS DISABLED ===== */
   --color-disabled: #9CA3AF;          /* Gris para elementos deshabilitados */
   --color-disabled-bg: #F3F4F6;       /* Fondo para elementos deshabilitados */
   
   /* ===== COLORES DE TABLA ===== */
-  --color-table-header: #1F1F5A;      /* Fondo header tabla */
+  --color-table-header: #155a9e;      /* Fondo header tabla */
   --color-table-header-text: #FFFFFF; /* Texto header tabla */
   --color-table-row-even: #F8F9FB;    /* Filas pares */
   --color-table-row-odd: #FFFFFF;     /* Filas impares */
@@ -65,13 +65,13 @@
   --color-table-border: #E5E7EB;      /* Bordes tabla */
   
   /* ===== COLORES DE FAQ ===== */
-  --color-faq-header: #1F1F5A;        /* Fondo header FAQ */
-  --color-faq-header-hover: #3A2DFF;  /* Hover header FAQ */
+  --color-faq-header: #155a9e;        /* Fondo header FAQ */
+  --color-faq-header-hover: #1e73be;  /* Hover header FAQ */
   --color-faq-icon: #00C6AE;          /* Iconos FAQ */
   --color-faq-toggle: #00C6AE;        /* Toggle FAQ */
   
   /* ===== COLORES DE FOOTER ===== */
-  --color-footer-bg: #1F1F5A;         /* Fondo footer */
+  --color-footer-bg: #155a9e;         /* Fondo footer */
   --color-footer-text: #FFFFFF;       /* Texto footer */
   --color-footer-link: #FFFFFF;       /* Enlaces footer */
   --color-footer-link-hover: #00C6AE; /* Hover enlaces footer */
@@ -79,7 +79,7 @@
   /* ===== COLORES DE BADGES ===== */
   --color-badge-success: #22C55E;     /* Badge éxito */
   --color-badge-warning: #F4B400;     /* Badge warning */
-  --color-badge-info: #3A2DFF;        /* Badge info */
+  --color-badge-info: #1e73be;        /* Badge info */
   --color-badge-error: #FF4D5A;       /* Badge error */
   
   /* ===== COLORES DE PRECIOS ===== */
@@ -88,13 +88,13 @@
   
   /* ===== COLORES DE CAMPAÑAS ===== */
   --color-campaign-positive: #22C55E; /* Campaña positiva */
-  --color-campaign-standard: #3A2DFF; /* Campaña estándar */
+  --color-campaign-standard: #1e73be; /* Campaña estándar */
   --color-campaign-limited: #F4B400;  /* Campaña limitada */
   
   /* ===== COLORES DE TRUST ELEMENTS ===== */
   --color-trust-bg: #F1F2FF;          /* Fondo trust bar */
-  --color-trust-text: #1F1F5A;        /* Texto trust bar */
-  --color-trust-icon: #1F1F5A;        /* Iconos trust bar */
+  --color-trust-text: #155a9e;        /* Texto trust bar */
+  --color-trust-icon: #155a9e;        /* Iconos trust bar */
   
   /* ===== COLORES DE DISCLAIMER ===== */
   --color-disclaimer-bg: rgba(244, 180, 0, 0.1); /* Fondo disclaimer */
@@ -189,7 +189,7 @@
 }
 
 .campaign-standard {
-  background-color: rgba(58, 45, 255, 0.2);
+  background-color: rgba(30, 115, 190, 0.2);
   color: var(--color-primary);
 }
 

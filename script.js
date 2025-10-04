@@ -36,6 +36,10 @@ async function loadBilforsikringData() {
         // Handle both old format (array) and new format (object with data property)
         const data = jsonData.data || jsonData;
         
+        // Create new card-based layout
+        createBilforsikringCards(data);
+        
+        // Keep table for fallback (hidden)
         const tbody = document.getElementById('bilforsikring-table');
         tbody.innerHTML = '';
         
@@ -90,6 +94,10 @@ async function loadLeasingData() {
         // Handle both old format (array) and new format (object with data property)
         const data = jsonData.data || jsonData;
         
+        // Create new card-based layout
+        createLeasingCards(data);
+        
+        // Keep table for fallback (hidden)
         const tbody = document.getElementById('leasing-table');
         tbody.innerHTML = '';
         
@@ -396,4 +404,158 @@ function getKampagneType(kampagne) {
     if (kampagneLower.includes('rabat') || kampagneLower.includes('rabat')) return 'standard';
     if (kampagneLower.includes('halv') || kampagneLower.includes('halv')) return 'limited';
     return 'standard';
+}
+
+// Function to create new card-based layout for bilforsikring
+function createBilforsikringCards(data) {
+    const container = document.querySelector('#bilforsikring .container');
+    if (!container) return;
+    
+    // Remove existing cards container if it exists
+    const existingCards = container.querySelector('.cards-container');
+    if (existingCards) {
+        existingCards.remove();
+    }
+    
+    let cardsHTML = '<div class="cards-container">';
+    
+    data.forEach(item => {
+        const badgeClass = getCampaignBadgeClass(item.kampagne);
+        const tilvalgHTML = item.tilvalg.map(tilvalg => 
+            `<div class="card-feature">${getTilvalgIcon(tilvalg)} ${tilvalg}</div>`
+        ).join('');
+        
+        cardsHTML += `
+            <div class="comparison-card">
+                ${item.kampagne ? `<div class="card-banner">${item.kampagne}</div>` : ''}
+                <div class="card-header">
+                    <div class="card-company-logo">${getCompanyInitials(item.udbyder)}</div>
+                    <div class="card-company-info">
+                        <h3>${item.udbyder}</h3>
+                        <p>${item.produkt}</p>
+                    </div>
+                    <div class="card-rating">
+                        <div class="rating-badge">5</div>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-details">
+                        <div class="card-detail-row">
+                            <span class="card-detail-label">Pris måned</span>
+                            <span class="card-detail-value price">${item.pris_mdr}</span>
+                        </div>
+                        <div class="card-detail-row">
+                            <span class="card-detail-label">Dækning</span>
+                            <span class="card-detail-value">${item.dækning}</span>
+                        </div>
+                    </div>
+                    <div class="card-features">
+                        ${tilvalgHTML}
+                    </div>
+                    <div class="card-cta">
+                        <a href="${item.link}" target="_blank" class="btn-primary">Se Tilbud</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p>Mindstepris ${item.pris_mdr}</p>
+                </div>
+            </div>
+        `;
+    });
+    
+    cardsHTML += '</div>';
+    
+    // Insert cards after trust bar
+    const trustBar = container.querySelector('.trust-bar');
+    if (trustBar) {
+        trustBar.insertAdjacentHTML('afterend', cardsHTML);
+    }
+}
+
+// Function to create new card-based layout for leasing
+function createLeasingCards(data) {
+    const container = document.querySelector('#leasing .container');
+    if (!container) return;
+    
+    // Remove existing cards container if it exists
+    const existingCards = container.querySelector('.cards-container');
+    if (existingCards) {
+        existingCards.remove();
+    }
+    
+    let cardsHTML = '<div class="cards-container">';
+    
+    data.forEach(item => {
+        const badgeClass = getCampaignBadgeClass(item.kampagne);
+        
+        cardsHTML += `
+            <div class="comparison-card">
+                ${item.kampagne ? `<div class="card-banner">${item.kampagne}</div>` : ''}
+                <div class="card-header">
+                    <div class="card-company-logo">${getCarBrandLogo(item.mærke)}</div>
+                    <div class="card-company-info">
+                        <h3>${item.mærke}</h3>
+                        <p>${item.model}</p>
+                    </div>
+                    <div class="card-rating">
+                        <div class="rating-badge">5</div>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-details">
+                        <div class="card-detail-row">
+                            <span class="card-detail-label">Pris måned</span>
+                            <span class="card-detail-value price">${item.pris_mdr}</span>
+                        </div>
+                        <div class="card-detail-row">
+                            <span class="card-detail-label">Udbetaling</span>
+                            <span class="card-detail-value">${item.udbetaling}</span>
+                        </div>
+                        <div class="card-detail-row">
+                            <span class="card-detail-label">Løbetid</span>
+                            <span class="card-detail-value">${item.løbetid}</span>
+                        </div>
+                    </div>
+                    <div class="card-features">
+                        <div class="card-feature">
+                            <i class="fas fa-check"></i>
+                            Oprettelse 0,-
+                        </div>
+                        <div class="card-feature">
+                            <i class="fas fa-check"></i>
+                            Ingen binding
+                        </div>
+                    </div>
+                    <div class="card-cta">
+                        <a href="${item.link}" target="_blank" class="btn-primary">Se Tilbud</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <p>Mindstepris ${item.pris_mdr}</p>
+                </div>
+            </div>
+        `;
+    });
+    
+    cardsHTML += '</div>';
+    
+    // Insert cards after trust bar
+    const trustBar = container.querySelector('.trust-bar');
+    if (trustBar) {
+        trustBar.insertAdjacentHTML('afterend', cardsHTML);
+    }
 }
